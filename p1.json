@@ -1,0 +1,86 @@
+[
+  {
+    "name": "outer_wall_bottom_left",
+    "position": { "x": 3.75, "y": 0, "z": 1.25 },
+    "size": { "width": 7.5, "depth": 0.2, "height": 2.5 },
+    "color": "#C0C0C0"
+  },
+  {
+    "name": "outer_wall_bottom_right",
+    "position": { "x": 9.25, "y": 0, "z": 1.25 },
+    "size": { "width": 1.5, "depth": 0.2, "height": 2.5 },
+    "color": "#C0C0C0"
+  },
+  {
+    "name": "outer_wall_top",
+    "position": { "x": 5, "y": 10, "z": 1.25 },
+    "size": { "width": 10, "depth": 0.2, "height": 2.5 },
+    "color": "#C0C0C0"
+  },
+  {
+    "name": "outer_wall_left",
+    "position": { "x": 0, "y": 5, "z": 1.25 },
+    "size": { "width": 0.2, "depth": 10, "height": 2.5 },
+    "color": "#C0C0C0"
+  },
+  {
+    "name": "outer_wall_right",
+    "position": { "x": 10, "y": 5, "z": 1.25 },
+    "size": { "width": 0.2, "depth": 10, "height": 2.5 },
+    "color": "#C0C0C0"
+  },
+  {
+    "name": "inner_wall_vertical_main_bottom",
+    "position": { "x": 4.5, "y": 0.5, "z": 1.25 },
+    "size": { "width": 0.2, "depth": 1.0, "height": 2.5 },
+    "color": "#808080"
+  },
+  {
+    "name": "inner_wall_vertical_main_middle_bottom",
+    "position": { "x": 4.5, "y": 4.25, "z": 1.25 },
+    "size": { "width": 0.2, "depth": 3.5, "height": 2.5 },
+    "color": "#808080"
+  },
+  {
+    "name": "inner_wall_vertical_main_middle_top",
+    "position": { "x": 4.5, "y": 8.75, "z": 1.25 },
+    "size": { "width": 0.2, "depth": 2.5, "height": 2.5 },
+    "color": "#808080"
+  },
+  {
+    "name": "inner_wall_horizontal_left",
+    "position": { "x": 0.875, "y": 5.0, "z": 1.25 },
+    "size": { "width": 1.75, "depth": 0.2, "height": 2.5 },
+    "color": "#808080"
+  },
+  {
+    "name": "inner_wall_horizontal_right",
+    "position": { "x": 3.875, "y": 5.0, "z": 1.25 },
+    "size": { "width": 1.25, "depth": 0.2, "height": 2.5 },
+    "color": "#808080"
+  },
+  {
+    "name": "inner_wall_vertical_hallway",
+    "position": { "x": 6.5, "y": 8.75, "z": 1.25 },
+    "size": { "width": 0.2, "depth": 2.5, "height": 2.5 },
+    "color": "#808080"
+  },
+  {
+    "name": "floor_room_BL",
+    "position": { "x": 2.25, "y": 2.5, "z": 0.025 },
+    "size": { "width": 4.5, "depth": 5.0, "height": 0.05 },
+    "color": "#ADD8E6"
+  },
+  {
+    "name": "floor_room_TL",
+    "position": { "x": 2.25, "y": 7.5, "z": 0.025 },
+    "size": { "width": 4.5, "depth": 5.0, "height": 0.05 },
+    "color": "#90EE90"
+  },
+  {
+    "name": "floor_room_R",
+    "position": { "x": 7.25, "y": 5.0, "z": 0.025 },
+    "size": { "width": 5.5, "depth": 10.0, "height": 0.05 },
+    "color": "#FFDAB9"
+  }
+]
