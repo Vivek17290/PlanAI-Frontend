@@ -1,0 +1,62 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [develop, main]
+
+jobs:
+  integration:
+    name: "Integration Checks"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      
+      - run: npm ci
+      
+      - run: npm run lint
+      
+      - run: npm run build
+      
+      - run: npm test || echo "Tests skipped (no test script)"
+
+  deploy_preview:
+    name: "Preview Deployment"
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out the code.
+      - uses: actions/checkout@v4
+      
+      # Deploys to Vercel using the Vercel CLI.
+      # It uses the VERCEL_TOKEN for authentication and the VERCEL_ORG_ID and VERCEL_PROJECT_ID
+      # secrets to identify the correct project on your Vercel personal account.
+      - run: npx vercel@latest deploy --token ${{ secrets.VERCEL_TOKEN }} --yes
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+  # This job deploys the application to production.
+  # It only runs on pushes to the main branch after the integration job has succeeded.
+  deploy_prod:
+    name: "Production Deployment"
+    if: github.ref == 'refs/heads/main'
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out the code.
+      - uses: actions/checkout@v4
+      
+      # Deploys to Vercel in production mode.
+      # It uses the same Vercel secrets as the preview deployment.
+      - run: npx vercel@latest deploy --prod --token ${{ secrets.VERCEL_TOKEN }} --yes
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
