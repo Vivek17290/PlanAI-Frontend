@@ -8,10 +8,10 @@ import { Label } from "@/components/ui/label";
 interface Object3D {
     name: string;
     position: { x: number; y: number; z: number };
-    size: { width: number; height: number; depth: number };
+    size: { width?: number; height?: number; depth?: number; radius?: number };
     color?: string;
     id?: string;
-    type?: string; // must be optional
+    type?: string;
 }
 
 
@@ -146,14 +146,28 @@ export const ObjectProperties: React.FC<ObjectPropertiesProps> = ({
               <label className="w-12 text-xs font-medium text-muted-foreground">{dim.charAt(0).toUpperCase()}</label>
               <Input
                 type="number"
-                value={localObject.size[dim as keyof typeof localObject.size]}
-                onChange={(e) => updateNested("size", dim, parseFloat(e.target.value))}
+                value={localObject.size?.[dim as keyof typeof localObject.size] || 1}
+                onChange={(e) => updateNested("size", dim, parseFloat(e.target.value) || 1)}
                 step="0.1"
                 min="0.1"
                 className="bg-input text-foreground"
               />
             </div>
           ))}
+          {/* Add radius field for spheres, cylinders, etc. */}
+          {(localObject.type === 'sphere' || localObject.type === 'cylinder' || localObject.type === 'cone' || localObject.type === 'fan' || localObject.type === 'lamp') && (
+            <div className="flex items-center gap-2">
+              <label className="w-12 text-xs font-medium text-muted-foreground">Radius</label>
+              <Input
+                type="number"
+                value={localObject.size?.radius || 0.5}
+                onChange={(e) => updateNested("size", "radius", parseFloat(e.target.value) || 0.5)}
+                step="0.1"
+                min="0.1"
+                className="bg-input text-foreground"
+              />
+            </div>
+          )}
         </div>
       </div>
 

@@ -562,6 +562,7 @@ const FloorPlanner: React.FC = () => {
     link.href = url;
     link.download = `floorplan_${new Date().getTime()}.json`;
     link.click();
+    localStorage.setItem("floorplan-json", jsonString);
     URL.revokeObjectURL(url);
   };
 
@@ -698,6 +699,27 @@ const FloorPlanner: React.FC = () => {
 
     ctx.restore();
   }, [walls, items, plottedObjects, selectedId, drawing, startPoint, currentPoint, zoom, pan, gridSize]);
+
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("floorplan-json");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        console.log(parsed);
+        if (Array.isArray(parsed)) {
+          loadJSONData(parsed);
+        }
+      }
+    } catch (e) {
+      console.error("Failed to load floorplan from localStorage", e);
+    }
+  }, []);
+
+  useEffect(() => {
+    const combinedData = [...walls, ...items, ...plottedObjects];
+    localStorage.setItem("floorplan-json", JSON.stringify(combinedData));
+  }, [walls, items, plottedObjects]);
+
 
   return (
     <div className="w-full h-screen bg-gray-100 flex flex-col">
