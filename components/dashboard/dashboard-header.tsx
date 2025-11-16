@@ -10,7 +10,7 @@ export default function DashboardHeader() {
             <Box className="w-6 h-6 text-white" />
           </div>
           <div>
-            <span className="font-bold text-xl text-white">3D Builder</span>
+            <span className="font-bold text-xl text-white">PlanAI</span>
             <p className="text-xs text-gray-500">Text → 2D → 3D</p>
           </div>
         </div>

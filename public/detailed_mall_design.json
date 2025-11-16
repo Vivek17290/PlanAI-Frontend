@@ -1,0 +1,1134 @@
+﻿[
+    {
+        "position":  {
+                         "y":  1.1,
+                         "z":  0,
+                         "x":  0
+                     },
+        "color":  "#F8F8FF",
+        "name":  "Main Floor",
+        "size":  {
+                     "width":  60,
+                     "depth":  40,
+                     "height":  0.2
+                 },
+        "type":  "floor"
+    },
+    {
+        "position":  {
+                         "y":  1.12,
+                         "z":  0,
+                         "x":  0
+                     },
+        "color":  "#2F4F4F",
+        "name":  "Floor Border",
+        "size":  {
+                     "width":  62,
+                     "depth":  42,
+                     "height":  0.1
+                 },
+        "type":  "floor"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -20,
+                         "x":  0
+                     },
+        "color":  "#708090",
+        "name":  "North Perimeter Wall",
+        "size":  {
+                     "width":  60,
+                     "depth":  0.3,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  20,
+                         "x":  0
+                     },
+        "color":  "#708090",
+        "name":  "South Perimeter Wall",
+        "size":  {
+                     "width":  60,
+                     "depth":  0.3,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  0,
+                         "x":  30
+                     },
+        "color":  "#708090",
+        "name":  "East Perimeter Wall",
+        "size":  {
+                     "width":  0.3,
+                     "depth":  40,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  0,
+                         "x":  -30
+                     },
+        "color":  "#708090",
+        "name":  "West Perimeter Wall",
+        "size":  {
+                     "width":  0.3,
+                     "depth":  40,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -16,
+                         "x":  -22
+                     },
+        "color":  "#F5F5F5",
+        "name":  "Apple Store - North Wall",
+        "size":  {
+                     "width":  8,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -8,
+                         "x":  -22
+                     },
+        "color":  "#F5F5F5",
+        "name":  "Apple Store - South Wall",
+        "size":  {
+                     "width":  8,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  -18
+                     },
+        "color":  "#F5F5F5",
+        "name":  "Apple Store - East Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  -26
+                     },
+        "color":  "#F5F5F5",
+        "name":  "Apple Store - West Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  1.5,
+                         "z":  -14,
+                         "x":  -24
+                     },
+        "color":  "#FFFFFF",
+        "name":  "Apple Store - Display Table 1",
+        "size":  {
+                     "width":  1.5,
+                     "depth":  0.8,
+                     "height":  0.8
+                 },
+        "type":  "table"
+    },
+    {
+        "position":  {
+                         "y":  1.5,
+                         "z":  -14,
+                         "x":  -20
+                     },
+        "color":  "#FFFFFF",
+        "name":  "Apple Store - Display Table 2",
+        "size":  {
+                     "width":  1.5,
+                     "depth":  0.8,
+                     "height":  0.8
+                 },
+        "type":  "table"
+    },
+    {
+        "position":  {
+                         "y":  1.55,
+                         "z":  -10,
+                         "x":  -22
+                     },
+        "color":  "#C0C0C0",
+        "name":  "Apple Store - Genius Bar",
+        "size":  {
+                     "width":  4,
+                     "depth":  0.8,
+                     "height":  0.9
+                 },
+        "type":  "table"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  -10,
+                         "x":  -24
+                     },
+        "color":  "#E6E6FA",
+        "name":  "Apple Store - Chair 1",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  -10,
+                         "x":  -20
+                     },
+        "color":  "#E6E6FA",
+        "name":  "Apple Store - Chair 2",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -16,
+                         "x":  -8
+                     },
+        "color":  "#2F2F2F",
+        "name":  "Nike Store - North Wall",
+        "size":  {
+                     "width":  8,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -8,
+                         "x":  -8
+                     },
+        "color":  "#2F2F2F",
+        "name":  "Nike Store - South Wall",
+        "size":  {
+                     "width":  8,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  -4
+                     },
+        "color":  "#2F2F2F",
+        "name":  "Nike Store - East Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  -12
+                     },
+        "color":  "#2F2F2F",
+        "name":  "Nike Store - West Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.35,
+                         "z":  -12,
+                         "x":  -11.8
+                     },
+        "color":  "#FF4500",
+        "name":  "Nike Store - Shoe Display Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  6,
+                     "height":  2.5
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.1,
+                         "z":  -14,
+                         "x":  -8
+                     },
+        "color":  "#FFFFFF",
+        "name":  "Nike Store - Clothing Rack",
+        "size":  {
+                     "width":  2,
+                     "depth":  0.1,
+                     "height":  2
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  1.55,
+                         "z":  -10,
+                         "x":  -6
+                     },
+        "color":  "#FF4500",
+        "name":  "Nike Store - Cash Counter",
+        "size":  {
+                     "width":  1.5,
+                     "depth":  0.8,
+                     "height":  0.9
+                 },
+        "type":  "counter"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -16,
+                         "x":  8
+                     },
+        "color":  "#1C1C1C",
+        "name":  "Zara Store - North Wall",
+        "size":  {
+                     "width":  10,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -8,
+                         "x":  8
+                     },
+        "color":  "#1C1C1C",
+        "name":  "Zara Store - South Wall",
+        "size":  {
+                     "width":  10,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  13
+                     },
+        "color":  "#1C1C1C",
+        "name":  "Zara Store - East Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  3
+                     },
+        "color":  "#1C1C1C",
+        "name":  "Zara Store - West Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2,
+                         "z":  -14,
+                         "x":  5
+                     },
+        "color":  "#F5F5DC",
+        "name":  "Zara Store - Mannequin 1",
+        "size":  {
+                     "width":  0.3,
+                     "depth":  0.2,
+                     "height":  1.8
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2,
+                         "z":  -14,
+                         "x":  11
+                     },
+        "color":  "#F5F5DC",
+        "name":  "Zara Store - Mannequin 2",
+        "size":  {
+                     "width":  0.3,
+                     "depth":  0.2,
+                     "height":  1.8
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.1,
+                         "z":  -11,
+                         "x":  6
+                     },
+        "color":  "#DAA520",
+        "name":  "Zara Store - Clothing Rack 1",
+        "size":  {
+                     "width":  2,
+                     "depth":  0.1,
+                     "height":  2
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.1,
+                         "z":  -11,
+                         "x":  10
+                     },
+        "color":  "#DAA520",
+        "name":  "Zara Store - Clothing Rack 2",
+        "size":  {
+                     "width":  2,
+                     "depth":  0.1,
+                     "height":  2
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  1.55,
+                         "z":  -10,
+                         "x":  5
+                     },
+        "color":  "#FFFFFF",
+        "name":  "Zara Store - Cash Counter",
+        "size":  {
+                     "width":  2,
+                     "depth":  0.8,
+                     "height":  0.9
+                 },
+        "type":  "counter"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -10,
+                         "x":  11
+                     },
+        "color":  "#8B4513",
+        "name":  "Zara Store - Fitting Room",
+        "size":  {
+                     "width":  1.5,
+                     "depth":  1.5,
+                     "height":  3
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -16,
+                         "x":  22
+                     },
+        "color":  "#228B22",
+        "name":  "Starbucks - North Wall",
+        "size":  {
+                     "width":  8,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -8,
+                         "x":  22
+                     },
+        "color":  "#228B22",
+        "name":  "Starbucks - South Wall",
+        "size":  {
+                     "width":  8,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  26
+                     },
+        "color":  "#228B22",
+        "name":  "Starbucks - East Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  -12,
+                         "x":  18
+                     },
+        "color":  "#228B22",
+        "name":  "Starbucks - West Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  8,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  1.55,
+                         "z":  -14,
+                         "x":  20
+                     },
+        "color":  "#8B4513",
+        "name":  "Starbucks - Counter",
+        "size":  {
+                     "width":  3,
+                     "depth":  0.8,
+                     "height":  0.9
+                 },
+        "type":  "counter"
+    },
+    {
+        "position":  {
+                         "y":  2.05,
+                         "z":  -14,
+                         "x":  19
+                     },
+        "color":  "#2F4F4F",
+        "name":  "Starbucks - Espresso Machine",
+        "size":  {
+                     "width":  0.5,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  1.5,
+                         "z":  -11,
+                         "x":  22
+                     },
+        "color":  "#D2691E",
+        "name":  "Starbucks - Table 1",
+        "size":  {
+                     "width":  0.8,
+                     "depth":  0.8,
+                     "height":  0.8
+                 },
+        "type":  "table"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  -11.5,
+                         "x":  21.5
+                     },
+        "color":  "#F5DEB3",
+        "name":  "Starbucks - Chair 1A",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  -10.5,
+                         "x":  22.5
+                     },
+        "color":  "#F5DEB3",
+        "name":  "Starbucks - Chair 1B",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  1.9,
+                         "z":  0,
+                         "x":  0
+                     },
+        "color":  "#4169E1",
+        "name":  "Central Fountain",
+        "size":  {
+                     "height":  1.6,
+                     "radius":  3
+                 },
+        "type":  "cylinder"
+    },
+    {
+        "position":  {
+                         "y":  1.2,
+                         "z":  0,
+                         "x":  0
+                     },
+        "color":  "#B0C4DE",
+        "name":  "Fountain Base",
+        "size":  {
+                     "height":  0.2,
+                     "radius":  4
+                 },
+        "type":  "cylinder"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  12,
+                         "x":  -15
+                     },
+        "color":  "#CD853F",
+        "name":  "Food Court - West Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  12,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  12,
+                         "x":  15
+                     },
+        "color":  "#CD853F",
+        "name":  "Food Court - East Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  12,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  1.5,
+                         "z":  10,
+                         "x":  -8
+                     },
+        "color":  "#DEB887",
+        "name":  "Food Court - Table 1",
+        "size":  {
+                     "width":  1.2,
+                     "depth":  0.8,
+                     "height":  0.8
+                 },
+        "type":  "table"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  9.5,
+                         "x":  -8.5
+                     },
+        "color":  "#8B4513",
+        "name":  "Food Court - Chair 1A",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  9.5,
+                         "x":  -7.5
+                     },
+        "color":  "#8B4513",
+        "name":  "Food Court - Chair 1B",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  1.5,
+                         "z":  10,
+                         "x":  8
+                     },
+        "color":  "#DEB887",
+        "name":  "Food Court - Table 2",
+        "size":  {
+                     "width":  1.2,
+                     "depth":  0.8,
+                     "height":  0.8
+                 },
+        "type":  "table"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  9.5,
+                         "x":  7.5
+                     },
+        "color":  "#8B4513",
+        "name":  "Food Court - Chair 2A",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  1.3,
+                         "z":  9.5,
+                         "x":  8.5
+                     },
+        "color":  "#8B4513",
+        "name":  "Food Court - Chair 2B",
+        "size":  {
+                     "width":  0.4,
+                     "depth":  0.4,
+                     "height":  0.4
+                 },
+        "type":  "chair"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  14,
+                         "x":  -22
+                     },
+        "color":  "#DC143C",
+        "name":  "McDonald\u0027s - North Wall",
+        "size":  {
+                     "width":  6,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  18,
+                         "x":  -22
+                     },
+        "color":  "#DC143C",
+        "name":  "McDonald\u0027s - South Wall",
+        "size":  {
+                     "width":  6,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  16,
+                         "x":  -19
+                     },
+        "color":  "#DC143C",
+        "name":  "McDonald\u0027s - East Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  4,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  16,
+                         "x":  -25
+                     },
+        "color":  "#DC143C",
+        "name":  "McDonald\u0027s - West Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  4,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  1.55,
+                         "z":  17.5,
+                         "x":  -22
+                     },
+        "color":  "#FFD700",
+        "name":  "McDonald\u0027s - Counter",
+        "size":  {
+                     "width":  4,
+                     "depth":  0.8,
+                     "height":  0.9
+                 },
+        "type":  "counter"
+    },
+    {
+        "position":  {
+                         "y":  2.05,
+                         "z":  17.5,
+                         "x":  -23
+                     },
+        "color":  "#000000",
+        "name":  "McDonald\u0027s - Cash Register 1",
+        "size":  {
+                     "width":  0.3,
+                     "depth":  0.3,
+                     "height":  0.2
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.05,
+                         "z":  17.5,
+                         "x":  -21
+                     },
+        "color":  "#000000",
+        "name":  "McDonald\u0027s - Cash Register 2",
+        "size":  {
+                     "width":  0.3,
+                     "depth":  0.3,
+                     "height":  0.2
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  1.6,
+                         "z":  15.5,
+                         "x":  -23
+                     },
+        "color":  "#C0C0C0",
+        "name":  "McDonald\u0027s - Fryer",
+        "size":  {
+                     "width":  0.8,
+                     "depth":  0.6,
+                     "height":  1
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  1.6,
+                         "z":  15.5,
+                         "x":  -21
+                     },
+        "color":  "#C0C0C0",
+        "name":  "McDonald\u0027s - Grill",
+        "size":  {
+                     "width":  1,
+                     "depth":  0.6,
+                     "height":  1
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  14,
+                         "x":  22
+                     },
+        "color":  "#32CD32",
+        "name":  "Subway - North Wall",
+        "size":  {
+                     "width":  6,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  18,
+                         "x":  22
+                     },
+        "color":  "#32CD32",
+        "name":  "Subway - South Wall",
+        "size":  {
+                     "width":  6,
+                     "depth":  0.2,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  16,
+                         "x":  25
+                     },
+        "color":  "#32CD32",
+        "name":  "Subway - East Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  4,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  2.6,
+                         "z":  16,
+                         "x":  19
+                     },
+        "color":  "#32CD32",
+        "name":  "Subway - West Wall",
+        "size":  {
+                     "width":  0.2,
+                     "depth":  4,
+                     "height":  3
+                 },
+        "type":  "wall"
+    },
+    {
+        "position":  {
+                         "y":  1.55,
+                         "z":  17.5,
+                         "x":  22
+                     },
+        "color":  "#FFFFFF",
+        "name":  "Subway - Counter",
+        "size":  {
+                     "width":  4,
+                     "depth":  0.8,
+                     "height":  0.9
+                 },
+        "type":  "counter"
+    },
+    {
+        "position":  {
+                         "y":  2.2,
+                         "z":  17.5,
+                         "x":  21
+                     },
+        "color":  "#FF6347",
+        "name":  "Subway - Ingredient Display 1",
+        "size":  {
+                     "width":  0.25,
+                     "depth":  0.25,
+                     "height":  0.15
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.2,
+                         "z":  17.5,
+                         "x":  22
+                     },
+        "color":  "#90EE90",
+        "name":  "Subway - Ingredient Display 2",
+        "size":  {
+                     "width":  0.25,
+                     "depth":  0.25,
+                     "height":  0.15
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  2.2,
+                         "z":  17.5,
+                         "x":  23
+                     },
+        "color":  "#FFD700",
+        "name":  "Subway - Ingredient Display 3",
+        "size":  {
+                     "width":  0.25,
+                     "depth":  0.25,
+                     "height":  0.15
+                 },
+        "type":  "cuboid"
+    },
+    {
+        "position":  {
+                         "y":  1.15,
+                         "z":  0,
+                         "x":  0
+                     },
+        "color":  "#E0E0E0",
+        "name":  "Main Walkway - North-South",
+        "size":  {
+                     "width":  4,
+                     "depth":  30,
+                     "height":  0.1
+                 },
+        "type":  "floor"
+    },
+    {
+        "position":  {
+                         "y":  1.15,
+                         "z":  0,
+                         "x":  0
+                     },
+        "color":  "#E0E0E0",
+        "name":  "Main Walkway - East-West",
+        "size":  {
+                     "width":  50,
+                     "depth":  4,
+                     "height":  0.1
+                 },
+        "type":  "floor"
+    },
+    {
+        "position":  {
+                         "y":  5.6,
+                         "z":  -8,
+                         "x":  -15
+                     },
+        "color":  "#FFF8DC",
+        "name":  "Ceiling Light 1",
+        "size":  {
+                     "height":  0.15,
+                     "radius":  0.3
+                 },
+        "type":  "lamp"
+    },
+    {
+        "position":  {
+                         "y":  5.6,
+                         "z":  -8,
+                         "x":  0
+                     },
+        "color":  "#FFF8DC",
+        "name":  "Ceiling Light 2",
+        "size":  {
+                     "height":  0.15,
+                     "radius":  0.3
+                 },
+        "type":  "lamp"
+    },
+    {
+        "position":  {
+                         "y":  5.6,
+                         "z":  -8,
+                         "x":  15
+                     },
+        "color":  "#FFF8DC",
+        "name":  "Ceiling Light 3",
+        "size":  {
+                     "height":  0.15,
+                     "radius":  0.3
+                 },
+        "type":  "lamp"
+    },
+    {
+        "position":  {
+                         "y":  5.6,
+                         "z":  8,
+                         "x":  -15
+                     },
+        "color":  "#FFF8DC",
+        "name":  "Ceiling Light 4",
+        "size":  {
+                     "height":  0.15,
+                     "radius":  0.3
+                 },
+        "type":  "lamp"
+    },
+    {
+        "position":  {
+                         "y":  5.6,
+                         "z":  8,
+                         "x":  0
+                     },
+        "color":  "#FFF8DC",
+        "name":  "Ceiling Light 5",
+        "size":  {
+                     "height":  0.15,
+                     "radius":  0.3
+                 },
+        "type":  "lamp"
+    },
+    {
+        "position":  {
+                         "y":  5.6,
+                         "z":  8,
+                         "x":  15
+                     },
+        "color":  "#FFF8DC",
+        "name":  "Ceiling Light 6",
+        "size":  {
+                     "height":  0.15,
+                     "radius":  0.3
+                 },
+        "type":  "lamp"
+    }
+]

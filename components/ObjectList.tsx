@@ -7,10 +7,10 @@ import { Trash2, GripVertical, Plus } from 'lucide-react';
 interface Object3D {
     name: string;
     position: { x: number; y: number; z: number };
-    size: { width: number; height: number; depth: number };
+    size: { width?: number; height?: number; depth?: number; radius?: number };
     color?: string;
     id?: string;
-    type?: string; // must be optional
+    type?: string;
 }
 
 
