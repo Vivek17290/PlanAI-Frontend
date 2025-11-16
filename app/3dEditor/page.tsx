@@ -192,7 +192,7 @@ export default function ThreeDEditor() {
                 setSelectedId(undefined);
                 // Save to session storage
                 sessionStorage.setItem('floorplan-json', JSON.stringify(json));
-            } catch (err) {
+            } catch{
                 alert("Invalid JSON file");
             }
         };
@@ -222,7 +222,7 @@ export default function ThreeDEditor() {
                 setSelectedId(undefined);
                 // Save to session storage
                 sessionStorage.setItem('floorplan-json', JSON.stringify(json));
-            } catch (err) {
+            } catch {
                 alert("Invalid JSON file");
             }
         };
@@ -235,57 +235,6 @@ export default function ThreeDEditor() {
 
     const handleReorderObjects = (reorderedObjects: Object3D[]) => {
         setObjects(reorderedObjects);
-    };
-
-    const loadSampleFloorPlan = async () => {
-        try {
-            const response = await fetch('/p1.json');
-            const json = await response.json();
-            const withIds = json.map((obj: Object3D) => ({
-                ...obj,
-                id: obj.id || Math.random().toString(36).substr(2, 9),
-                type: obj.type || detectObjectTypeFromName(obj.name),
-            }));
-            setObjects(withIds);
-            setSelectedId(undefined);
-        } catch (err) {
-            console.error('Failed to load sample floor plan:', err);
-            alert("Failed to load sample floor plan");
-        }
-    };
-
-    const loadMallDesign = async () => {
-        try {
-            const response = await fetch('/mall_design.json');
-            const json = await response.json();
-            const withIds = json.map((obj: Object3D) => ({
-                ...obj,
-                id: obj.id || Math.random().toString(36).substr(2, 9),
-                type: obj.type || detectObjectTypeFromName(obj.name),
-            }));
-            setObjects(withIds);
-            setSelectedId(undefined);
-        } catch (err) {
-            console.error('Failed to load mall design:', err);
-            alert("Failed to load mall design");
-        }
-    };
-
-    const loadSmallMall = async () => {
-        try {
-            const response = await fetch('/small_mall.json');
-            const json = await response.json();
-            const withIds = json.map((obj: Object3D) => ({
-                ...obj,
-                id: obj.id || Math.random().toString(36).substr(2, 9),
-                type: obj.type || detectObjectTypeFromName(obj.name),
-            }));
-            setObjects(withIds);
-            setSelectedId(undefined);
-        } catch (err) {
-            console.error('Failed to load small mall:', err);
-            alert("Failed to load small mall");
-        }
     };
 
     const loadDetailedMall = async () => {

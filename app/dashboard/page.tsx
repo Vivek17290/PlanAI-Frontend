@@ -24,7 +24,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Subtle Background Effect */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-indigo-950/10 to-black" />
+        <div className="absolute inset-0 bg-linear-to-br from-black via-indigo-950/10 to-black" />
         
         {/* Radial gradient spotlight effect */}
         <div 

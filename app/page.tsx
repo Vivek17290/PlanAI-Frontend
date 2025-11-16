@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Layers, Eye, CheckCircle, Sparkles, Box, Move3d } from
 
 export default function HomePage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
+  const [, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -25,11 +25,11 @@ export default function HomePage() {
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
       {/* Animated Background Beams */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950/20 to-slate-950" />
+        <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-indigo-950/20 to-slate-950" />
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent animate-beam"
+            className="absolute h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent animate-beam"
             style={{
               top: `${(i * 5)}%`,
               left: `-100%`,
@@ -55,10 +55,10 @@ export default function HomePage() {
       <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50">
+            <div className="w-10 h-10 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50">
               <Box className="w-6 h-6 text-white" />
             </div>
-            <span className="font-bold text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">PlanAI</span>
+            <span className="font-bold text-xl bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">PlanAI</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
@@ -71,7 +71,7 @@ export default function HomePage() {
               Dashboard
             </a>
           </div>
-          <a href="/LoginSignup" className="px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group">
+          <a href="/LoginSignup" className="px-6 py-2.5 bg-linear-to-r from-indigo-500 to-purple-600 rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group">
             Get Started 
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
@@ -87,11 +87,11 @@ export default function HomePage() {
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-fade-in-up">
-            <span className="bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent">
               Text to 3D
             </span>
             <br />
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
+            <span className="bg-linear-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
               in Seconds
             </span>
           </h1>
@@ -102,7 +102,7 @@ export default function HomePage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <a href="/LoginSignup" className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group hover:scale-105">
+            <a href="/LoginSignup" className="px-8 py-4 bg-linear-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group hover:scale-105">
               Start Creating Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -126,8 +126,8 @@ export default function HomePage() {
 
         {/* 3D Preview Mockup */}
         <div className="relative max-w-5xl mx-auto mt-20 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 p-8 backdrop-blur-xl overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 via-indigo-500/5 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
+          <div className="relative rounded-2xl border border-white/10 bg-linear-to-br from-indigo-500/10 to-purple-500/10 p-8 backdrop-blur-xl overflow-hidden group">
+            <div className="absolute inset-0 bg-linear-to-br from-indigo-500/0 via-indigo-500/5 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
             
             {/* Animated grid */}
             <div className="absolute inset-0 opacity-20">
@@ -138,17 +138,17 @@ export default function HomePage() {
             </div>
 
             <div className="relative z-10 aspect-video bg-slate-900/50 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/20 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-indigo-500/20 via-transparent to-transparent" />
               
               {/* Floating 3D shapes */}
               <div className="relative">
-                <div className="w-32 h-32 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl border border-white/20 flex items-center justify-center animate-float backdrop-blur-sm">
+                <div className="w-32 h-32 bg-linear-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl border border-white/20 flex items-center justify-center animate-float backdrop-blur-sm">
                   <Move3d className="w-16 h-16 text-indigo-400" />
                 </div>
               </div>
 
-              <div className="absolute top-8 right-8 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl border border-white/20 backdrop-blur-sm animate-float" style={{ animationDelay: '0.5s' }} />
-              <div className="absolute bottom-8 left-8 w-16 h-16 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-lg border border-white/20 backdrop-blur-sm animate-float" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-8 right-8 w-20 h-20 bg-linear-to-br from-purple-500/20 to-pink-500/20 rounded-xl border border-white/20 backdrop-blur-sm animate-float" style={{ animationDelay: '0.5s' }} />
+              <div className="absolute bottom-8 left-8 w-16 h-16 bg-linear-to-br from-indigo-500/20 to-blue-500/20 rounded-lg border border-white/20 backdrop-blur-sm animate-float" style={{ animationDelay: '1s' }} />
             </div>
           </div>
         </div>
@@ -159,11 +159,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Three Steps to
               </span>
               <br />
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                 Your 3D Space
               </span>
             </h2>
@@ -193,11 +193,11 @@ export default function HomePage() {
                 icon: <Eye className="w-8 h-8" />,
                 color: "from-pink-500 to-red-500"
               }
-            ].map((item, i) => (
+            ].map((item) => (
               <div key={item.step} className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 rounded-2xl transition-all duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 rounded-2xl transition-all duration-500" />
                 <div className="relative p-8 rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-sm hover:border-white/20 transition-all duration-300 h-full">
-                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${item.color} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex p-4 rounded-xl bg-linear-to-br ${item.color} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     {item.icon}
                   </div>
                   <div className="text-sm font-semibold text-indigo-400 mb-3">Step {item.step}</div>
@@ -214,7 +214,7 @@ export default function HomePage() {
       <section id="features" className="relative py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent">
               Powerful Features
             </h2>
             <p className="text-xl text-gray-400">
@@ -250,10 +250,10 @@ export default function HomePage() {
               }
             ].map((feature, i) => (
               <div key={i} className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" 
+                <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" 
                      style={{ background: `linear-gradient(to bottom right, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2))` }} />
                 <div className="relative p-8 rounded-2xl bg-slate-900/50 border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all duration-300 h-full">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex p-3 rounded-xl bg-linear-to-br ${feature.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
@@ -268,21 +268,21 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="relative py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 p-12 md:p-16 text-center overflow-hidden backdrop-blur-xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5" />
+          <div className="relative rounded-3xl border border-white/10 bg-linear-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 p-12 md:p-16 text-center overflow-hidden backdrop-blur-xl">
+            <div className="absolute inset-0 bg-linear-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5" />
             
             {/* Animated rings */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-indigo-500/20 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-purple-500/20 rounded-full animate-ping" style={{ animationDuration: '3s', animationDelay: '0.5s' }} />
             
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Ready to Transform Your Ideas?
               </h2>
               <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
                 Join thousands of designers, architects, and creatives using PlanAI to bring their visions to life.
               </p>
-              <a href="/LoginSignup" className="px-10 py-5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-3 mx-auto group hover:scale-105">
+              <a href="/LoginSignup" className="px-10 py-5 bg-linear-to-r from-indigo-500 to-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-3 mx-auto group hover:scale-105">
                 Start Creating Now
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -297,7 +297,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50">
+                <div className="w-10 h-10 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50">
                   <Box className="w-6 h-6 text-white" />
                 </div>
                 <span className="font-bold text-xl">PlanAI</span>

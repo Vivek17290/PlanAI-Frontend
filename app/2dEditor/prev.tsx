@@ -224,7 +224,7 @@ export const Preview3DModal: React.FC<Preview3DModalProps> = ({
         </div>
 
         {/* Controls Guide */}
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-t border-gray-200">
+        <div className="bg-linear-to-r from-gray-50 to-gray-100 px-6 py-4 border-t border-gray-200">
           <div className="flex flex-wrap gap-6 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-gray-700">↔️ Pan:</span>

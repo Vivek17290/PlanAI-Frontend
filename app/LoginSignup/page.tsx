@@ -101,7 +101,7 @@ export default function AuthPages() {
         <div className="min-h-screen bg-black text-white overflow-hidden">
             {/* Subtle Background Effect */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-br from-black via-indigo-950/10 to-black" />
+                <div className="absolute inset-0 bg-linear-to-br from-black via-indigo-950/10 to-black" />
 
                 {/* Radial gradient spotlight effect */}
                 <div
@@ -135,7 +135,7 @@ export default function AuthPages() {
             <nav className="relative z-50 border-b border-white/5 bg-black/50 backdrop-blur-xl">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <div className="w-10 h-10 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
                             <Box className="w-6 h-6 text-white" />
                         </div>
                         <span className="font-bold text-xl text-white">3D Builder</span>
