@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Square, DoorOpen, Maximize2, Trash2, MousePointer, Download, Sofa, Image } from 'lucide-react';
 import { Preview3DModal } from "./prev";
 
@@ -49,7 +50,7 @@ interface FurnitureItem {
   width: number;
   depth: number;
   color: string;
-  icon: string; // Changed from JSX.Element to string (emoji)
+  icon: string;
 }
 
 type Mode = 'select' | 'wall' | 'door' | 'window' | 'furniture';
@@ -64,6 +65,7 @@ const FURNITURE_CATALOG: FurnitureItem[] = [
 ];
 
 const FloorPlanner: React.FC = () => {
+  const router = useRouter();
   const [mode, setMode] = useState<Mode>('select');
   const [walls, setWalls] = useState<Wall[]>([]);
   const [items, setItems] = useState<Item[]>([]);
@@ -77,7 +79,6 @@ const FloorPlanner: React.FC = () => {
   const [gridSize] = useState<number>(20);
   const [zoom, setZoom] = useState<number>(1);
   const [pan, setPan] = useState<Point>({ x: 0, y: 0 });
-  const [] = useState<boolean>(false);
   const [selectedFurniture, setSelectedFurniture] = useState<FurnitureItem | null>(null);
   const [showFurniturePanel, setShowFurniturePanel] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -144,7 +145,7 @@ const FloorPlanner: React.FC = () => {
     
     const merged: Wall[] = [];
     const used = new Set<number>();
-    const tolerance = 20; // Increased tolerance for better merging
+    const tolerance = 20;
     
     walls.forEach((wall, idx) => {
       if (used.has(idx)) return;
@@ -163,19 +164,16 @@ const FloorPlanner: React.FC = () => {
       const fixedCoord = isHorizontal ? wall.y1 : wall.x1;
       const wallsToMerge = [idx];
       
-      // Find all walls that can be merged with this one
       walls.forEach((otherWall, otherIdx) => {
         if (used.has(otherIdx) || otherIdx === idx) return;
         
         const otherIsHorizontal = Math.abs(otherWall.y2 - otherWall.y1) < tolerance;
         const otherIsVertical = Math.abs(otherWall.x2 - otherWall.x1) < tolerance;
         
-        // Check if same orientation and aligned
         if (isHorizontal && otherIsHorizontal && Math.abs(otherWall.y1 - fixedCoord) < tolerance) {
           const otherMinStart = Math.min(otherWall.x1, otherWall.x2);
           const otherMaxEnd = Math.max(otherWall.x1, otherWall.x2);
           
-          // Check if adjacent or overlapping with tolerance
           if (otherMaxEnd + tolerance >= minStart && otherMinStart - tolerance <= maxEnd) {
             minStart = Math.min(minStart, otherMinStart);
             maxEnd = Math.max(maxEnd, otherMaxEnd);
@@ -185,7 +183,6 @@ const FloorPlanner: React.FC = () => {
           const otherMinStart = Math.min(otherWall.y1, otherWall.y2);
           const otherMaxEnd = Math.max(otherWall.y1, otherWall.y2);
           
-          // Check if adjacent or overlapping with tolerance
           if (otherMaxEnd + tolerance >= minStart && otherMinStart - tolerance <= maxEnd) {
             minStart = Math.min(minStart, otherMinStart);
             maxEnd = Math.max(maxEnd, otherMaxEnd);
@@ -194,7 +191,6 @@ const FloorPlanner: React.FC = () => {
         }
       });
       
-      // Create merged wall
       if (isHorizontal) {
         merged.push({
           id: Date.now(),
@@ -218,7 +214,6 @@ const FloorPlanner: React.FC = () => {
     
     return merged;
   };
-
 
   const loadJSONData = (jsonData: JSONObject[]) => {
     const scale = 50;
@@ -491,7 +486,6 @@ const FloorPlanner: React.FC = () => {
   };
 
   const exportToJSON = () => {
-    // Map walls back to JSON format
     const wallObjects = walls.map((wall) => {
       const isHorizontal = Math.abs(wall.y2 - wall.y1) < 5;
       const scale = 50;
@@ -521,7 +515,6 @@ const FloorPlanner: React.FC = () => {
       }
     });
 
-    // Map doors and windows
     const doorWindowObjects = items.map((item) => {
       const scale = 50;
       return {
@@ -536,7 +529,6 @@ const FloorPlanner: React.FC = () => {
       };
     });
 
-    // Map furniture objects
     const furnitureObjects = plottedObjects.map((obj) => {
       const scale = 50;
       return {
@@ -568,25 +560,89 @@ const FloorPlanner: React.FC = () => {
     URL.revokeObjectURL(url);
   };
 
+  const handleGenerate3D = () => {
+    const wallObjects = walls.map((wall) => {
+      const isHorizontal = Math.abs(wall.y2 - wall.y1) < 5;
+      const scale = 50;
+      
+      if (isHorizontal) {
+        const width = Math.abs(wall.x2 - wall.x1) / scale;
+        const x = (Math.min(wall.x1, wall.x2) + width * scale / 2 - 500) / scale;
+        const z = (wall.y1 - 400) / scale;
+        
+        return {
+          name: `interior_wall_${walls.indexOf(wall)}`,
+          position: { x, y: 0, z },
+          size: { width, height: 2.5, depth: 0.2 },
+          color: '#f2f3f5'
+        };
+      } else {
+        const depth = Math.abs(wall.y2 - wall.y1) / scale;
+        const x = (wall.x1 - 500) / scale;
+        const z = (Math.min(wall.y1, wall.y2) + depth * scale / 2 - 400) / scale;
+        
+        return {
+          name: `interior_wall_${walls.indexOf(wall)}`,
+          position: { x, y: 0, z },
+          size: { width: 0.2, height: 2.5, depth },
+          color: '#f2f3f5'
+        };
+      }
+    });
+
+    const doorWindowObjects = items.map((item) => {
+      const scale = 50;
+      return {
+        name: `${item.type}_${items.indexOf(item)}`,
+        position: {
+          x: (item.x - 500) / scale,
+          y: 0,
+          z: (item.y - 400) / scale
+        },
+        size: { width: item.type === 'door' ? 0.9 : 1.2, height: 2.1, depth: 0.1 },
+        color: item.type === 'door' ? '#8b5cf6' : '#06b6d4'
+      };
+    });
+
+    const furnitureObjects = plottedObjects.map((obj) => {
+      const scale = 50;
+      return {
+        name: obj.name,
+        position: {
+          x: (obj.x - 500) / scale,
+          y: 0,
+          z: (obj.y - 400) / scale
+        },
+        size: {
+          width: obj.width / scale,
+          height: 1,
+          depth: obj.depth / scale
+        },
+        color: obj.color
+      };
+    });
+
+    const combinedData = [...wallObjects, ...doorWindowObjects, ...furnitureObjects];
+    const jsonString = JSON.stringify(combinedData, null, 2);
+    
+    sessionStorage.setItem("floorplan-json", jsonString);
+    router.push('/3dEditor');
+  };
+
   const exportAsImage = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Create a temporary canvas with white background
     const tempCanvas = document.createElement('canvas');
     tempCanvas.width = canvas.width;
     tempCanvas.height = canvas.height;
     const tempCtx = tempCanvas.getContext('2d');
     if (!tempCtx) return;
 
-    // Fill with white background
     tempCtx.fillStyle = '#ffffff';
     tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
-
-    // Draw the current canvas content
     tempCtx.drawImage(canvas, 0, 0);
 
-    // Download as PNG
     const link = document.createElement('a');
     link.href = tempCanvas.toDataURL('image/png');
     link.download = `floorplan_${new Date().getTime()}.png`;
@@ -604,7 +660,6 @@ const FloorPlanner: React.FC = () => {
     ctx.translate(pan.x, pan.y);
     ctx.scale(zoom, zoom);
 
-    // Draw grid
     ctx.strokeStyle = '#e5e7eb';
     ctx.lineWidth = 0.5;
     for (let x = 0; x < canvas.width / zoom; x += gridSize) {
@@ -624,7 +679,6 @@ const FloorPlanner: React.FC = () => {
       const furniture = FURNITURE_CATALOG.find(f => f.name === obj.name);
       
       if (furniture) {
-        // Draw only the icon, enlarged
         ctx.font = `bold ${Math.max(40, obj.width * 0.6)}px Arial`;
         ctx.fillStyle = obj.color;
         ctx.textAlign = 'center';
@@ -632,7 +686,6 @@ const FloorPlanner: React.FC = () => {
         ctx.fillText(furniture.icon, obj.x, obj.y);
       }
 
-      // Draw selection border when selected
       const isSelected = obj.id === selectedId;
       if (isSelected) {
         ctx.strokeStyle = '#3b82f6';
@@ -713,7 +766,7 @@ const FloorPlanner: React.FC = () => {
         }
       }
     } catch (e) {
-      console.error("Failed to load floorplan from localStorage", e);
+      console.error("Failed to load floorplan from sessionStorage", e);
     }
   }, []);
 
@@ -721,7 +774,6 @@ const FloorPlanner: React.FC = () => {
     const combinedData = [...walls, ...items, ...plottedObjects];
     localStorage.setItem("floorplan-json", JSON.stringify(combinedData));
   }, [walls, items, plottedObjects]);
-
 
   return (
     <div className="w-full h-screen bg-gray-100 flex flex-col">
@@ -787,6 +839,14 @@ const FloorPlanner: React.FC = () => {
           title="Open 3D Preview"
         >
           3D Preview
+        </button>
+
+        <button
+          onClick={handleGenerate3D}
+          className="p-2 rounded bg-cyan-500 text-white hover:bg-cyan-600 flex items-center gap-2"
+          title="Generate 3D Scene"
+        >
+          Generate 3D
         </button>
 
         <div className="border-l border-gray-300 h-8 mx-2"></div>
