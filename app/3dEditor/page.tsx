@@ -11,6 +11,7 @@ import { Download, Upload, Cloud, Plus, Home } from 'lucide-react';
 interface Object3D {
     name: string;
     position: { x: number; y: number; z: number };
+    rotation?: { x: number; y: number; z: number };
     size: { width?: number; height?: number; depth?: number; radius?: number };
     color?: string;
     id?: string;

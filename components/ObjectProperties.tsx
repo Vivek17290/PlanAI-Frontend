@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 interface Object3D {
     name: string;
     position: { x: number; y: number; z: number };
+    rotation?: { x: number; y: number; z: number };
     size: { width?: number; height?: number; depth?: number; radius?: number };
     color?: string;
     id?: string;
@@ -135,6 +136,51 @@ export const ObjectProperties: React.FC<ObjectPropertiesProps> = ({
               />
             </div>
           ))}
+        </div>
+      </div>
+
+      <div>
+        <Label className="text-sm font-semibold text-foreground mb-3 block">Rotation (degrees)</Label>
+        <div className="space-y-2">
+          {["x", "y", "z"].map((axis) => (
+            <div key={axis} className="flex items-center gap-2">
+              <label className="w-8 text-xs font-medium text-muted-foreground">{axis.toUpperCase()}</label>
+              <Input
+                type="number"
+                value={Math.round((localObject.rotation?.[axis as keyof typeof localObject.rotation] || 0) * 180 / Math.PI)}
+                onChange={(e) => {
+                  const degrees = parseFloat(e.target.value) || 0;
+                  const radians = degrees * Math.PI / 180;
+                  const currentRotation = localObject.rotation || { x: 0, y: 0, z: 0 };
+                  updateProperty("rotation", { ...currentRotation, [axis]: radians });
+                }}
+                step="15"
+                className="bg-input text-foreground"
+              />
+              <span className="text-xs text-muted-foreground">°</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-2 flex gap-1">
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => updateProperty("rotation", { x: 0, y: 0, z: 0 })}
+            className="text-xs"
+          >
+            Reset
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => {
+              const currentRotation = localObject.rotation || { x: 0, y: 0, z: 0 };
+              updateProperty("rotation", { ...currentRotation, y: currentRotation.y + Math.PI / 2 });
+            }}
+            className="text-xs"
+          >
+            +90° Y
+          </Button>
         </div>
       </div>
 

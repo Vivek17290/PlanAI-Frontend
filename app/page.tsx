@@ -58,7 +58,7 @@ export default function HomePage() {
             <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50">
               <Box className="w-6 h-6 text-white" />
             </div>
-            <span className="font-bold text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">3D Builder</span>
+            <span className="font-bold text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">PlanAI</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
@@ -67,14 +67,14 @@ export default function HomePage() {
             <a href="#how-it-works" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
               How It Works
             </a>
-            <a href="#pricing" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
-              Pricing
+            <a href="/dashboard" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
+              Dashboard
             </a>
           </div>
-          <button className="px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group">
+          <a href="/LoginSignup" className="px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group">
             Get Started 
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -102,19 +102,16 @@ export default function HomePage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <button className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group hover:scale-105">
+            <a href="/LoginSignup" className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-2 group hover:scale-105">
               Start Creating Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-              Watch Demo
-            </button>
+            </a>
           </div>
 
           <div className="flex flex-wrap gap-8 mt-16 justify-center text-sm animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-indigo-400" />
-              <span className="text-gray-400">10,000+ Designs Created</span>
+              <span className="text-gray-400"> Design Creation</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-indigo-400" />
@@ -283,12 +280,12 @@ export default function HomePage() {
                 Ready to Transform Your Ideas?
               </h2>
               <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-                Join thousands of designers, architects, and creatives using 3D Builder to bring their visions to life.
+                Join thousands of designers, architects, and creatives using PlanAI to bring their visions to life.
               </p>
-              <button className="px-10 py-5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-3 mx-auto group hover:scale-105">
+              <a href="/LoginSignup" className="px-10 py-5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 flex items-center gap-3 mx-auto group hover:scale-105">
                 Start Creating Now
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -303,36 +300,40 @@ export default function HomePage() {
                 <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50">
                   <Box className="w-6 h-6 text-white" />
                 </div>
-                <span className="font-bold text-xl">3D Builder</span>
+                <span className="font-bold text-xl">PlanAI</span>
               </div>
-              <p className="text-sm text-gray-400">Transform ideas into stunning 3D spaces</p>
+              <p className="text-sm text-gray-400">AI-powered 3D design and visualization platform</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-white">Product</h4>
+              <h4 className="font-semibold mb-4 text-white">Tools</h4>
               <ul className="space-y-3 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Docs</a></li>
+                <li><a href="/3dEditor" className="hover:text-white transition-colors">3D Editor</a></li>
+                <li><a href="/2dEditor" className="hover:text-white transition-colors">2D Editor</a></li>
+                <li><a href="/text2D" className="hover:text-white transition-colors">Text to 2D</a></li>
+                <li><a href="/dashboard" className="hover:text-white transition-colors">Dashboard</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-white">Company</h4>
+              <h4 className="font-semibold mb-4 text-white">Resources</h4>
               <ul className="space-y-3 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/demo" className="hover:text-white transition-colors">Demo</a></li>
+                <li><a href="/LoginSignup" className="hover:text-white transition-colors">Login</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
+                <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-white">Legal</h4>
+              <h4 className="font-semibold mb-4 text-white">Support</h4>
               <ul className="space-y-3 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">© 2025 3D Builder. All rights reserved.</p>
+            <p className="text-sm text-gray-400">© 2025 PlanAI. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>

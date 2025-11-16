@@ -215,8 +215,8 @@ export default function Home() {
                 >
                   <Image
                     src={plan.url}
-                    alt="Floor plan"
                     fill
+                    alt="Floor plan"
                     unoptimized
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />

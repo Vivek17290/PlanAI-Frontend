@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Square, DoorOpen, Maximize2, Trash2, MousePointer, Download, Sofa, Image } from 'lucide-react';
+import { Preview3DModal } from "./prev";
 
 interface Point {
   x: number;
@@ -82,6 +83,7 @@ const FloorPlanner: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const jsonFileInputRef = useRef<HTMLInputElement>(null);
   const dragOffset = useRef<Point>({ x: 0, y: 0 });
+  const [is3DOpen, setIs3DOpen] = useState(false);
 
   const snapToGrid = (point: Point): Point => ({
     x: Math.round(point.x / gridSize) * gridSize,
@@ -726,28 +728,28 @@ const FloorPlanner: React.FC = () => {
       <div className="bg-white shadow-md p-4 flex items-center gap-2 flex-wrap">
         <button
           onClick={() => { setMode('select'); setShowFurniturePanel(false); }}
-          className={`p-2 rounded ${mode === 'select' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`p-2 rounded ${mode === 'select' ? 'bg-blue-500 text-white' : 'bg-black'}`}
           title="Select & Drag Objects"
         >
           <MousePointer size={20} />
         </button>
         <button
           onClick={() => { setMode('wall'); setShowFurniturePanel(false); }}
-          className={`p-2 rounded ${mode === 'wall' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`p-2 rounded ${mode === 'wall' ? 'bg-blue-500 text-white' : 'bg-black'}`}
           title="Draw Wall"
         >
           <Square size={20} />
         </button>
         <button
           onClick={() => { setMode('door'); setShowFurniturePanel(false); }}
-          className={`p-2 rounded ${mode === 'door' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`p-2 rounded ${mode === 'door' ? 'bg-blue-500 text-white' : 'bg-black'}`}
           title="Add Door"
         >
           <DoorOpen size={20} />
         </button>
         <button
           onClick={() => { setMode('window'); setShowFurniturePanel(false); }}
-          className={`p-2 rounded ${mode === 'window' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`p-2 rounded ${mode === 'window' ? 'bg-blue-500 text-white' : 'bg-black'}`}
           title="Add Window"
         >
           <Maximize2 size={20} />
@@ -755,7 +757,7 @@ const FloorPlanner: React.FC = () => {
 
         <button
           onClick={() => { setMode('furniture'); setShowFurniturePanel(!showFurniturePanel); }}
-          className={`p-2 rounded ${mode === 'furniture' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`p-2 rounded ${mode === 'furniture' ? 'bg-blue-500 text-white' : 'bg-black'}`}
           title="Add Furniture"
         >
           <Sofa size={20} />
@@ -766,19 +768,27 @@ const FloorPlanner: React.FC = () => {
         <button
           onClick={deleteSelected}
           disabled={!selectedId}
-          className={`p-2 rounded ${selectedId ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-400'}`}
+          className={`p-2 rounded ${selectedId ? 'bg-red-500 text-white' : 'bg-black text-gray-400'}`}
           title="Delete Selected"
         >
           <Trash2 size={20} />
         </button>
         <button
           onClick={clearAll}
-          className="p-2 rounded bg-gray-200 hover:bg-gray-300"
+          className="p-2 rounded bg-black"
           title="Clear All"
         >
           Clear All
         </button>
-        
+
+        <button
+          onClick={() => setIs3DOpen(true)}
+          className="p-2 rounded bg-indigo-500 text-white hover:bg-indigo-600 flex items-center gap-2"
+          title="Open 3D Preview"
+        >
+          3D Preview
+        </button>
+
         <div className="border-l border-gray-300 h-8 mx-2"></div>
 
         <input
@@ -818,10 +828,10 @@ const FloorPlanner: React.FC = () => {
         <div className="border-l border-gray-300 h-8 mx-2"></div>
         
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600">Zoom:</span>
-          <button onClick={() => setZoom(Math.max(0.8, zoom - 0.1))} className="px-2 py-1 bg-gray-200 rounded">-</button>
-          <span className="text-sm w-12 text-center">{Math.round(zoom * 100)}%</span>
-          <button onClick={() => setZoom(Math.min(2, zoom + 0.1))} className="px-2 py-1 bg-gray-200 rounded">+</button>
+          <span className="text-sm text-black">Zoom:</span>
+          <button onClick={() => setZoom(Math.max(0.8, zoom - 0.1))} className="px-2 py-1 bg-black rounded">-</button>
+          <span className="text-sm text-black w-12 text-center">{Math.round(zoom * 100)}%</span>
+          <button onClick={() => setZoom(Math.min(2, zoom + 0.1))} className="px-2 py-1 bg-black rounded">+</button>
         </div>
       </div>
 
@@ -856,6 +866,14 @@ const FloorPlanner: React.FC = () => {
           onMouseLeave={handleMouseUp}
         />
       </div>
+
+      <Preview3DModal
+        isOpen={is3DOpen}
+        onClose={() => setIs3DOpen(false)}
+        walls={walls}
+        items={items}
+        plottedObjects={plottedObjects}
+      />
 
       <div className="bg-gray-800 text-white p-2 text-sm">
         {mode === 'wall' && "Click and drag to draw walls"}

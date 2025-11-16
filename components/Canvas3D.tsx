@@ -8,6 +8,7 @@ import * as THREE from "three";
 interface Object3D {
     name: string;
     position: { x: number; y: number; z: number };
+    rotation?: { x: number; y: number; z: number };
     size: { width?: number; height?: number; depth?: number; radius?: number };
     color?: string;
     id?: string;
@@ -408,6 +409,7 @@ const RealisticObject3D: React.FC<{
     setIsDragging(true);
     document.body.style.cursor = 'grabbing';
     
+    // Disable orbit controls when dragging objects
     if (orbitControlsRef?.current) {
       orbitControlsRef.current.enabled = false;
     }
@@ -439,9 +441,13 @@ const RealisticObject3D: React.FC<{
 
     raycaster.current.setFromCamera(mouse.current, camera);
     
-    if (raycaster.current.ray.intersectPlane(dragPlane.current, dragPoint.current)) {
-      const offset = dragPoint.current.clone().sub(startPos.current);
-      meshRef.current.position.copy(startPos.current.clone().add(offset));
+    // Create a horizontal plane at the object's Y position for dragging
+    const horizontalPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -meshRef.current.position.y);
+    const intersectionPoint = new THREE.Vector3();
+    
+    if (raycaster.current.ray.intersectPlane(horizontalPlane, intersectionPoint)) {
+      meshRef.current.position.x = intersectionPoint.x;
+      meshRef.current.position.z = intersectionPoint.z;
     }
   };
 
@@ -466,11 +472,15 @@ const RealisticObject3D: React.FC<{
 
   // Calculate position - floors should be at ground level
   const yPosition = objectType === 'floor' ? obj.position.y : obj.position.y + height / 2;
+  
+  // Get rotation values (default to 0 if not specified)
+  const rotation = obj.rotation || { x: 0, y: 0, z: 0 };
 
   return (
     <group
       ref={meshRef}
       position={[obj.position.x, yPosition, obj.position.z]}
+      rotation={[rotation.x, rotation.y, rotation.z]}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
